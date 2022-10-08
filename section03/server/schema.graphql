@@ -3,6 +3,7 @@ schema {
 }
 
 type Query {
+    company(id: ID!): Company
     job(id: ID!): Job
     jobs: [Job!]
 }
@@ -10,6 +11,7 @@ type Query {
 type Company {
     id: ID!
     name: String!
+    description: String
 }
 
 type Job {
