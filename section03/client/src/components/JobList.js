@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
 function JobItem({ job }) {
-    console.log({ job });
     const title = job.company
         ? `${job.title} at ${job.company.name}`
         : job.title;
     return (
         <li className="media">
             <div className="media-content">
-                <Link to={`/jobs/${job.id}`}>{title}</Link>
+                <Link to={`/jobs/${job.id}`} state={{ job }}>
+                    {title}
+                </Link>
             </div>
         </li>
     );
