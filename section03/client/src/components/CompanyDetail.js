@@ -10,12 +10,12 @@ function CompanyDetail() {
 
     useEffect(() => {
         getCompany(companyId)
-            .then((res) => setCompany(res.company))
+            .then((res) => setCompany(res))
             .catch((err) => console.log(err));
     }, [companyId]);
 
     if (!company) {
-        return <p>Loading...</p>;
+        return <p>Login...</p>;
     }
 
     return (
